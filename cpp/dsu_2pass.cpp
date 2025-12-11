@@ -4,6 +4,35 @@
 #include <unordered_map>
 #include <unordered_set>
 
+DSUInt32::DSUInt32(int n) : parent(n), rank(n, 0) {
+    for (int i = 0; i < n; ++i) {
+        parent[i] = i;
+    }
+}
+
+int32_t DSUInt32::find(int32_t x) {
+    while (x != parent[x]) {
+        parent[x] = parent[parent[x]];
+        x = parent[x];
+    }
+    return x;
+}
+
+void DSUInt32::union_set(int32_t a, int32_t b) {
+    int32_t ra = find(a);
+    int32_t rb = find(b);
+    if (ra == rb) return;
+
+    if (rank[ra] < rank[rb]) {
+        parent[ra] = rb;
+    } else if (rank[ra] > rank[rb]) {
+        parent[rb] = ra;
+    } else {
+        parent[rb] = ra;
+        rank[ra]++;
+    }
+}
+
 std::vector<int32_t> label_cc_2pass(
     const uint8_t* img, int H, int W, 
     bool eight_connectivity

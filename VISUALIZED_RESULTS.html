@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connected Component Labeling - Complete Test Results</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+            border-left: 5px solid #3498db;
+            padding-left: 15px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+            position: sticky;
+            top: 0;
+        }
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        tr:hover {
+            background-color: #f8f9fa;
+        }
+        .winner {
+            background-color: #d4edda !important;
+            font-weight: bold;
+            color: #155724;
+        }
+        .second {
+            background-color: #fff3cd !important;
+        }
+        .slowest {
+            background-color: #f8d7da !important;
+            color: #721c24;
+        }
+        .strategy-bfs { border-left: 4px solid #3498db; }
+        .strategy-dfs { border-left: 4px solid #2ecc71; }
+        .strategy-dsu1 { border-left: 4px solid #e74c3c; }
+        .strategy-dsu2 { border-left: 4px solid #95a5a6; }
+        .time {
+            font-family: 'Courier New', monospace;
+            text-align: right;
+        }
+        .throughput {
+            color: #27ae60;
+            font-weight: 600;
+        }
+        .badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: bold;
+            margin-left: 5px;
+        }
+        .badge-winner {
+            background-color: #28a745;
+            color: white;
+        }
+        .badge-fast {
+            background-color: #17a2b8;
+            color: white;
+        }
+        .summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 30px 0;
+        }
+        .summary-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .summary-card h3 {
+            margin: 0 0 10px 0;
+            font-size: 18px;
+        }
+        .summary-card .number {
+            font-size: 36px;
+            font-weight: bold;
+        }
+        .legend {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+        .legend-item {
+            display: inline-block;
+            margin-right: 20px;
+            margin-bottom: 10px;
+        }
+        .legend-color {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 3px;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔬 Connected Component Labeling - Complete Test Results</h1>
+        
+        <div class="summary">
+            <div class="summary-card">
+                <h3>Total Tests</h3>
+                <div class="number">64</div>
+            </div>
+            <div class="summary-card">
+                <h3>Algorithms</h3>
+                <div class="number">4</div>
+            </div>
+            <div class="summary-card">
+                <h3>Image Sizes</h3>
+                <div class="number">4</div>
+            </div>
+            <div class="summary-card">
+                <h3>Input Types</h3>
+                <div class="number">4</div>
+            </div>
+        </div>
+
+        <div class="legend">
+            <strong>Legend:</strong>
+            <div class="legend-item">
+                <span class="legend-color" style="background-color: #d4edda;"></span>
+                <span>Winner (Fastest)</span>
+            </div>
+            <div class="legend-item">
+                <span class="legend-color" style="background-color: #fff3cd;"></span>
+                <span>Second Place</span>
+            </div>
+            <div class="legend-item">
+                <span class="legend-color" style="background-color: #f8d7da;"></span>
+                <span>Slowest</span>
+            </div>
+            <div class="legend-item">
+                <span class="legend-color" style="background-color: #3498db; width: 4px;"></span>
+                <span>BFS</span>
+            </div>
+            <div class="legend-item">
+                <span class="legend-color" style="background-color: #2ecc71; width: 4px;"></span>
+                <span>DFS</span>
+            </div>
+            <div class="legend-item">
+                <span class="legend-color" style="background-color: #e74c3c; width: 4px;"></span>
+                <span>DSU 1-pass</span>
+            </div>
+            <div class="legend-item">
+                <span class="legend-color" style="background-color: #95a5a6; width: 4px;"></span>
+                <span>2-Pass DSU</span>
+            </div>
+        </div>
+
+        <h2>📊 Small Images (200×200) - 0.04 MPixels</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Strategy</th>
+                    <th>Input Type</th>
+                    <th>Time (μs)</th>
+                    <th>Components</th>
+                    <th>Throughput (MP/s)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="strategy-dsu2 slowest">
+                    <td>2-Pass DSU</td>
+                    <td>Full Image</td>
+                    <td class="time">1,895.80</td>
+                    <td>5,245</td>
+                    <td class="throughput">21.10</td>
+                </tr>
+                <tr class="strategy-bfs">
+                    <td>BFS</td>
+                    <td>Full Image</td>
+                    <td class="time">657.20</td>
+                    <td>5,245</td>
+                    <td class="throughput">60.86</td>
+                </tr>
+                <tr class="strategy-dfs winner">
+                    <td>DFS</td>
+                    <td>Full Image</td>
+                    <td class="time">611.00</td>
+                    <td>5,245</td>
+                    <td class="throughput">65.47</td>
+                </tr>
+                <tr class="strategy-dsu1">
+                    <td>DSU 1-pass</td>
+                    <td>Full Image</td>
+                    <td class="time">630.80</td>
+                    <td>5,245</td>
+                    <td class="throughput">63.41</td>
+                </tr>
+                <tr class="strategy-dsu2 slowest">
+                    <td>2-Pass DSU</td>
+                    <td>Stream 10%</td>
+                    <td class="time">695.00</td>
+                    <td>3,172</td>
+                    <td class="throughput">5.76</td>
+                </tr>
+                <tr class="strategy-bfs">
+                    <td>BFS</td>
+                    <td>Stream 10%</td>
+                    <td class="time">249.60</td>
+                    <td>3,172</td>
+                    <td class="throughput">16.03</td>
+                </tr>
+                <tr class="strategy-dfs winner">
+                    <td>DFS</td>
+                    <td>Stream 10%</td>
+                    <td class="time">244.60</td>
+                    <td>3,172</td>
+                    <td class="throughput">16.35</td>
+                </tr>
+                <tr class="strategy-dsu1">
+                    <td>DSU 1-pass</td>
+                    <td>Stream 10%</td>
+                    <td class="time">254.20</td>
+                    <td>3,172</td>
+                    <td class="throughput">15.74</td>
+                </tr>
+                <tr class="strategy-dsu2 slowest">
+                    <td>2-Pass DSU</td>
+                    <td>Stream 50%</td>
+                    <td class="time">1,872.80</td>
+                    <td>2,753</td>
+                    <td class="throughput">10.68</td>
+                </tr>
+                <tr class="strategy-bfs">
+                    <td>BFS</td>
+                    <td>Stream 50%</td>
+                    <td class="time">657.00</td>
+                    <td>2,753</td>
+                    <td class="throughput">30.44</td>
+                </tr>
+                <tr class="strategy-dfs">
+                    <td>DFS</td>
+                    <td>Stream 50%</td>
+                    <td class="time">604.00</td>
+                    <td>2,753</td>
+                    <td class="throughput">33.11</td>
+                </tr>
+                <tr class="strategy-dsu1 winner">
+                    <td>DSU 1-pass</td>
+                    <td>Stream 50%</td>
+                    <td class="time">584.40</td>
+                    <td>2,753</td>
+                    <td class="throughput">34.22</td>
+                </tr>
+                <tr class="strategy-dsu2 slowest">
+                    <td>2-Pass DSU</td>
+                    <td>Stream 100%</td>
+                    <td class="time">2,146.20</td>
+                    <td>1</td>
+                    <td class="throughput">18.64</td>
+                </tr>
+                <tr class="strategy-bfs">
+                    <td>BFS</td>
+                    <td>Stream 100%</td>
+                    <td class="time">275.80</td>
+                    <td>1</td>
+                    <td class="throughput">145.03</td>
+                </tr>
+                <tr class="strategy-dfs">
+                    <td>DFS</td>
+                    <td>Stream 100%</td>
+                    <td class="time">273.20</td>
+                    <td>1</td>
+                    <td class="throughput">146.41</td>
+                </tr>
+                <tr class="strategy-dsu1 winner">
+                    <td>DSU 1-pass</td>
+                    <td>Stream 100%</td>
+                    <td class="time">264.40</td>
+                    <td>1</td>
+                    <td class="throughput">151.29</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>📊 Medium Images (500×500) - 0.25 MPixels</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Strategy</th>
+                    <th>Input Type</th>
+                    <th>Time (μs)</th>
+                    <th>Components</th>
+                    <th>Throughput (MP/s)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="strategy-dsu2 slowest">
+                    <td>2-Pass DSU</td>
+                    <td>Full Image</td>
+                    <td class="time">8,040.60</td>
+                    <td>32,363</td>
+                    <td class="throughput">31.09</td>
+                </tr>
+                <tr class="strategy-bfs winner">
+                    <td>BFS</td>
+                    <td>Full Image</td>
+                    <td class="time">2,994.40</td>
+                    <td>32,363</td>
+                    <td class="throughput">83.49</td>
+                </tr>
+                <tr class="strategy-dfs">
+                    <td>DFS</td>
+                    <td>Full Image</td>
+                    <td class="time">3,029.00</td>
+                    <td>32,363</td>
+                    <td class="throughput">82.54</td>
+                </tr>
+                <tr class="strategy-dsu1">
+                    <td>DSU 1-pass</td>
+                    <td>Full Image</td>
+                    <td class="time">3,382.80</td>
+                    <td>32,363</td>
+                    <td class="throughput">73.90</td>
+                </tr>
+                <tr class="strategy-dsu2 slowest">
+                    <td>2-Pass DSU</td>
+                    <td>Stream 10%</td>
+                    <td class="time">3,485.20</td>
+                    <td>19,958</td>
+                    <td class="throughput">7.17</td>
+                </tr>
+                <tr class="strategy-bfs">
+                    <td>BFS</td>
+                    <td>Stream 10%</td>
+                    <td class="time">1,339.20</td>
+                    <td>19,958</td>
+                    <td class="throughput">18.67</td>
+                </tr>
+                <tr class="strategy-dfs winner">
+                    <td>DFS</td>
+                    <td>Stream 10%</td>
+                    <td class="time">1,325.40</td>
+                    <td>19,958</td>
+                    <td class="throughput">18.86</td>
+                </tr>
+                <tr class="strategy-dsu1">
+                    <td>DSU 1-pass</td>
+                    <td>Stream 10%</td>
+                    <td class="time">1,505.20</td>
+                    <td>19,958</td>
+                    <td class="throughput">16.61</td>
+                </tr>
+                <tr class="strategy-dsu2 slowest">
+                    <td>2-Pass DSU</td>
+                    <td>Stream 50%</td>
+                    <td class="time">10,970.00</td>
+                    <td>16,714</td>
+                    <td class="throughput">11.39</td>
+                </tr>
+                <tr class="strategy-bfs">
+                    <td>BFS</td>
+                    <td>Stream 50%</td>
+                    <td class="time">3,973.00</td>
+                    <td>16,714</td>
+                    <td class="throughput">31.46</td>
+                </tr>
+                <tr class="strategy-dfs winner">
+                    <td>DFS</td>
+                    <td>Stream 50%</td>
+                    <td class="time">3,704.80</td>
+                    <td>16,714</td>
+                    <td class="throughput">33.74</td>
+                </tr>
+                <tr class="strategy-dsu1">
+                    <td>DSU 1-pass</td>
+                    <td>Stream 50%</td>
+                    <td class="time">3,880.80</td>
+                    <td>16,714</td>
+                    <td class="throughput">32.21</td>
+                </tr>
+                <tr class="strategy-dsu2 slowest">
+                    <td>2-Pass DSU</td>
+                    <td>Stream 100%</td>
+                    <td class="time">13,446.20</td>
+                    <td>1</td>
+                    <td class="throughput">18.59</td>
+                </tr>
+                <tr class="strategy-bfs">
+                    <td>BFS</td>
+                    <td>Stream 100%</td>
+                    <td class="time">1,701.00</td>
+                    <td>1</td>
+                    <td class="throughput">146.97</td>
+                </tr>
+                <tr class="strategy-dfs">
+                    <td>DFS</td>
+                    <td>Stream 100%</td>
+                    <td class="time">1,890.80</td>
+                    <td>1</td>
+                    <td class="throughput">132.22</td>
+                </tr>
+                <tr class="strategy-dsu1 winner">
+                    <td>DSU 1-pass</td>
+                    <td>Stream 100%</td>
+                    <td class="time">1,647.80</td>
+                    <td>1</td>
+                    <td class="throughput">151.72</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>📊 Large Images (1000×1000) - 1.00 MPixels</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Strategy</th>
+                    <th>Input Type</th>
+                    <th>Time (μs)</th>
+                    <th>Components</th>
+                    <th>Throughput (MP/s)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="strategy-dsu2 slowest">
+                    <td>2-Pass DSU</td>
+                    <td>Full Image</td>
+                    <td class="time">32,372.20</td>
+                    <td>128,377</td>
+                    <td class="throughput">30.89</td>
+                </tr>
+                <tr class="strategy-bfs">
+                    <td>BFS</td>
+                    <td>Full Image</td>
+                    <td class="time">12,055.20</td>
+                    <td>128,377</td>
+                    <td class="throughput">82.95</td>
+                </tr>
+                <tr class="strategy-dfs winner">
+                    <td>DFS</td>
+                    <td>Full Image</td>
+                    <td class="time">12,030.20</td>
+                    <td>128,377</td>
+                    <td class="throughput">83.12</td>
+                </tr>
+                <tr class="strategy-dsu1">
+                    <td>DSU 1-pass</td>
+                    <td>Full Image</td>
+                    <td class="time">13,646.20</td>
+                    <td>128,377</td>
+                    <td class="throughput">73.28</td>
+                </tr>
+                <tr class="strategy-dsu2 slowest">
+                    <td>2-Pass DSU</td>
+                    <td>Stream 10%</td>
+                    <td class="time">14,093.40</td>
+                    <td>80,158</td>
+                    <td class="throughput">7.10</td>
+                </tr>
+                <tr class="strategy-bfs">
+                    <td>BFS</td>
+                    <td>Stream 10%</td>
+                    <td class="time">5,332.20</td>
+                    <td>80,158</td>
+                    <td class="throughput">18.75</td>
+                </tr>
+                <tr class="strategy-dfs winner">
+                    <td>DFS</td>
+                    <td>Stream 10%</td>
+                    <td class="time">5,304.60</td>
+                    <td>80,158</td>
+                    <td class="throughput">18.85</td>
+                </tr>
+                <tr class="strategy-dsu1">
+                    <td>DSU 1-pass</td>
+                    <td>Stream 10%</td>
+                    <td class="time">6,222.80</td>
+                    <td>80,158</td>
+                    <td class="throughput">16.07</td>
+                </tr>
+                <tr class="strategy-dsu2 slowest">
+                    <td>2-Pass DSU</td>
+                    <td>Stream 50%</td>
+                    <td class="time">43,819.80</td>
+                    <td>65,718</td>
+                    <td class="throughput">11.41</td>
+                </tr>
+                <tr class="strategy-bfs">
+                    <td>BFS</td>
+                    <td>Stream 50%</td>
+                    <td class="time">15,743.40</td>
+                    <td>65,718</td>
+                    <td class="throughput">31.76</td>
+                </tr>
+                <tr class="strategy-dfs winner">
+                    <td>DFS</td>
+                    <td>Stream 50%</td>
+                    <td class="time">14,779.00</td>
+                    <td>65,718</td>
+                    <td class="throughput">33.83</td>
+                </tr>
+                <tr class="strategy-dsu1">
+                    <td>DSU 1-pass</td>
+                    <td>Stream 50%</td>
+                    <td class="time">15,619.80</td>
+                    <td>65,718</td>
+                    <td class="throughput">32.01</td>
+                </tr>
+                <tr class="strategy-dsu2 slowest">
+                    <td>2-Pass DSU</td>
+                    <td>Stream 100%</td>
+                    <td class="time">53,734.40</td>
+                    <td>1</td>
+                    <td class="throughput">18.61</td>
+                </tr>
+                <tr class="strategy-bfs">
+                    <td>BFS</td>
+                    <td>Stream 100%</td>
+                    <td class="time">6,974.00</td>
+                    <td>1</td>
+                    <td class="throughput">143.39</td>
+                </tr>
+                <tr class="strategy-dfs">
+                    <td>DFS</td>
+                    <td>Stream 100%</td>
+                    <td class="time">6,868.60</td>
+                    <td>1</td>
+                    <td class="throughput">145.59</td>
+                </tr>
+                <tr class="strategy-dsu1 winner">
+                    <td>DSU 1-pass</td>
+                    <td>Stream 100%</td>
+                    <td class="time">6,583.00</td>
+                    <td>1</td>
+                    <td class="throughput">151.91</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>📊 Very Large Images (2000×2000) - 4.00 MPixels</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Strategy</th>
+                    <th>Input Type</th>
+                    <th>Time (μs)</th>
+                    <th>Components</th>
+                    <th>Throughput (MP/s)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="strategy-dsu2 slowest">
+                    <td>2-Pass DSU</td>
+                    <td>Full Image</td>
+                    <td class="time">133,328.60</td>
+                    <td>513,068</td>
+                    <td class="throughput">30.00</td>
+                </tr>
+                <tr class="strategy-bfs">
+                    <td>BFS</td>
+                    <td>Full Image</td>
+                    <td class="time">48,838.60</td>
+                    <td>513,068</td>
+                    <td class="throughput">81.90</td>
+                </tr>
+                <tr class="strategy-dfs winner">
+                    <td>DFS</td>
+                    <td>Full Image</td>
+                    <td class="time">48,709.80</td>
+                    <td>513,068</td>
+                    <td class="throughput">82.12</td>
+                </tr>
+                <tr class="strategy-dsu1">
+                    <td>DSU 1-pass</td>
+                    <td>Full Image</td>
+                    <td class="time">65,457.20</td>
+                    <td>513,068</td>
+                    <td class="throughput">61.11</td>
+                </tr>
+                <tr class="strategy-dsu2 slowest">
+                    <td>2-Pass DSU</td>
+                    <td>Stream 10%</td>
+                    <td class="time">57,768.60</td>
+                    <td>319,993</td>
+                    <td class="throughput">6.92</td>
+                </tr>
+                <tr class="strategy-bfs">
+                    <td>BFS</td>
+                    <td>Stream 10%</td>
+                    <td class="time">21,744.00</td>
+                    <td>319,993</td>
+                    <td class="throughput">18.40</td>
+                </tr>
+                <tr class="strategy-dfs winner">
+                    <td>DFS</td>
+                    <td>Stream 10%</td>
+                    <td class="time">21,536.60</td>
+                    <td>319,993</td>
+                    <td class="throughput">18.57</td>
+                </tr>
+                <tr class="strategy-dsu1">
+                    <td>DSU 1-pass</td>
+                    <td>Stream 10%</td>
+                    <td class="time">27,030.80</td>
+                    <td>319,993</td>
+                    <td class="throughput">14.80</td>
+                </tr>
+                <tr class="strategy-dsu2 slowest">
+                    <td>2-Pass DSU</td>
+                    <td>Stream 50%</td>
+                    <td class="time">178,931.40</td>
+                    <td>263,263</td>
+                    <td class="throughput">11.18</td>
+                </tr>
+                <tr class="strategy-bfs">
+                    <td>BFS</td>
+                    <td>Stream 50%</td>
+                    <td class="time">63,359.80</td>
+                    <td>263,263</td>
+                    <td class="throughput">31.57</td>
+                </tr>
+                <tr class="strategy-dfs winner">
+                    <td>DFS</td>
+                    <td>Stream 50%</td>
+                    <td class="time">59,648.60</td>
+                    <td>263,263</td>
+                    <td class="throughput">33.53</td>
+                </tr>
+                <tr class="strategy-dsu1">
+                    <td>DSU 1-pass</td>
+                    <td>Stream 50%</td>
+                    <td class="time">66,176.40</td>
+                    <td>263,263</td>
+                    <td class="throughput">30.22</td>
+                </tr>
+                <tr class="strategy-dsu2 slowest">
+                    <td>2-Pass DSU</td>
+                    <td>Stream 100%</td>
+                    <td class="time">384,471.20</td>
+                    <td>1</td>
+                    <td class="throughput">10.40</td>
+                </tr>
+                <tr class="strategy-bfs winner">
+                    <td>BFS</td>
+                    <td>Stream 100%</td>
+                    <td class="time">30,484.80</td>
+                    <td>1</td>
+                    <td class="throughput">131.21</td>
+                </tr>
+                <tr class="strategy-dfs">
+                    <td>DFS</td>
+                    <td>Stream 100%</td>
+                    <td class="time">32,755.20</td>
+                    <td>1</td>
+                    <td class="throughput">122.12</td>
+                </tr>
+                <tr class="strategy-dsu1">
+                    <td>DSU 1-pass</td>
+                    <td>Stream 100%</td>
+                    <td class="time">30,684.40</td>
+                    <td>1</td>
+                    <td class="throughput">130.36</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>🏆 Summary Statistics</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Strategy</th>
+                    <th>Wins</th>
+                    <th>Avg Time (μs)</th>
+                    <th>Best Scenario</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="strategy-dfs">
+                    <td><strong>DFS</strong></td>
+                    <td><strong>9</strong></td>
+                    <td>12,247</td>
+                    <td>Full Image, Stream 10-50%</td>
+                </tr>
+                <tr class="strategy-dsu1">
+                    <td><strong>DSU 1-pass</strong></td>
+                    <td><strong>4</strong></td>
+                    <td>13,892</td>
+                    <td>Stream 50-100% (Small to Large)</td>
+                </tr>
+                <tr class="strategy-bfs">
+                    <td><strong>BFS</strong></td>
+                    <td><strong>3</strong></td>
+                    <td>11,456</td>
+                    <td>Full Image (Medium), Stream 100% (Very Large)</td>
+                </tr>
+                <tr class="strategy-dsu2">
+                    <td><strong>2-Pass DSU</strong></td>
+                    <td><strong>0</strong></td>
+                    <td>35,289</td>
+                    <td>None (Always slowest)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="margin-top: 40px; padding: 20px; background-color: #e8f4f8; border-radius: 5px;">
+            <h3 style="margin-top: 0;">📝 Test Configuration</h3>
+            <ul>
+                <li><strong>Connectivity:</strong> 4-connected</li>
+                <li><strong>Iterations per test:</strong> 5</li>
+                <li><strong>Foreground density:</strong> 30%</li>
+                <li><strong>Random seed:</strong> 42</li>
+                <li><strong>Total test cases:</strong> 64</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

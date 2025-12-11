@@ -1,65 +1,65 @@
 Strategy,ImageSize,InputType,Time_us,Components,Throughput_MPs,IsStream
-2-Pass DSU,Small (200x200),Full Image,1479.2,5245,27.0416,false
-BFS,Small (200x200),Full Image,1192,5245,33.557,false
-DFS,Small (200x200),Full Image,762.8,5245,52.4384,false
-DSU 1-pass,Small (200x200),Full Image,530.6,5245,75.3864,false
-2-Pass DSU,Small (200x200),Stream 10%,821,3172,4.87211,true
-BFS,Small (200x200),Stream 10%,261.2,3172,15.3139,true
-DFS,Small (200x200),Stream 10%,244.8,3172,16.3399,true
-DSU 1-pass,Small (200x200),Stream 10%,266,3172,15.0376,true
-2-Pass DSU,Small (200x200),Stream 50%,1780,2753,11.236,true
-BFS,Small (200x200),Stream 50%,628.6,2753,31.8167,true
-DFS,Small (200x200),Stream 50%,647.6,2753,30.8833,true
-DSU 1-pass,Small (200x200),Stream 50%,586,2753,34.1297,true
-2-Pass DSU,Small (200x200),Stream 100%,2136,1,18.7266,true
-BFS,Small (200x200),Stream 100%,275.2,1,145.349,true
-DFS,Small (200x200),Stream 100%,278.8,1,143.472,true
-DSU 1-pass,Small (200x200),Stream 100%,267.2,1,149.701,true
-2-Pass DSU,Medium (500x500),Full Image,8153.4,32363,30.6621,false
-BFS,Medium (500x500),Full Image,3045.6,32363,82.0856,false
-DFS,Medium (500x500),Full Image,3014.2,32363,82.9407,false
-DSU 1-pass,Medium (500x500),Full Image,3413,32363,73.2493,false
-2-Pass DSU,Medium (500x500),Stream 10%,3557.4,19958,7.0276,true
-BFS,Medium (500x500),Stream 10%,1364.8,19958,18.3177,true
-DFS,Medium (500x500),Stream 10%,1339.6,19958,18.6623,true
-DSU 1-pass,Medium (500x500),Stream 10%,1575.2,19958,15.871,true
-2-Pass DSU,Medium (500x500),Stream 50%,11700.4,16714,10.6834,true
-BFS,Medium (500x500),Stream 50%,4124.4,16714,30.3074,true
-DFS,Medium (500x500),Stream 50%,3784.6,16714,33.0286,true
-DSU 1-pass,Medium (500x500),Stream 50%,3966.4,16714,31.5147,true
-2-Pass DSU,Medium (500x500),Stream 100%,13531.4,1,18.4755,true
-BFS,Medium (500x500),Stream 100%,1700.6,1,147.007,true
-DFS,Medium (500x500),Stream 100%,1854.6,1,134.8,true
-DSU 1-pass,Medium (500x500),Stream 100%,1678.8,1,148.916,true
-2-Pass DSU,Large (1000x1000),Full Image,32836.4,128377,30.454,false
-BFS,Large (1000x1000),Full Image,12185,128377,82.0681,false
-DFS,Large (1000x1000),Full Image,12139.2,128377,82.3778,false
-DSU 1-pass,Large (1000x1000),Full Image,13945.6,128377,71.7072,false
-2-Pass DSU,Large (1000x1000),Stream 10%,14194.6,80158,7.04493,true
-BFS,Large (1000x1000),Stream 10%,5346.6,80158,18.7035,true
-DFS,Large (1000x1000),Stream 10%,5353,80158,18.6811,true
-DSU 1-pass,Large (1000x1000),Stream 10%,6283.6,80158,15.9144,true
-2-Pass DSU,Large (1000x1000),Stream 50%,44080.2,65718,11.343,true
-BFS,Large (1000x1000),Stream 50%,16136.6,65718,30.9855,true
-DFS,Large (1000x1000),Stream 50%,14815.8,65718,33.7478,true
-DSU 1-pass,Large (1000x1000),Stream 50%,15742.6,65718,31.761,true
-2-Pass DSU,Large (1000x1000),Stream 100%,53657,1,18.6369,true
-BFS,Large (1000x1000),Stream 100%,6914.4,1,144.626,true
-DFS,Large (1000x1000),Stream 100%,7037,1,142.106,true
-DSU 1-pass,Large (1000x1000),Stream 100%,6700.4,1,149.245,true
-2-Pass DSU,Very Large (2000x2000),Full Image,135119,513068,29.6036,false
-BFS,Very Large (2000x2000),Full Image,48914.6,513068,81.7752,false
-DFS,Very Large (2000x2000),Full Image,52478.6,513068,76.2215,false
-DSU 1-pass,Very Large (2000x2000),Full Image,68124.8,513068,58.7158,false
-2-Pass DSU,Very Large (2000x2000),Stream 10%,58229.2,319993,6.86941,true
-BFS,Very Large (2000x2000),Stream 10%,21373.6,319993,18.7147,true
-DFS,Very Large (2000x2000),Stream 10%,22007.8,319993,18.1754,true
-DSU 1-pass,Very Large (2000x2000),Stream 10%,27912.2,319993,14.3307,true
-2-Pass DSU,Very Large (2000x2000),Stream 50%,180674,263263,11.0697,true
-BFS,Very Large (2000x2000),Stream 50%,63624.2,263263,31.4346,true
-DFS,Very Large (2000x2000),Stream 50%,59637.4,263263,33.536,true
-DSU 1-pass,Very Large (2000x2000),Stream 50%,67430.6,263263,29.6601,true
-2-Pass DSU,Very Large (2000x2000),Stream 100%,216735,1,18.4557,true
-BFS,Very Large (2000x2000),Stream 100%,27850.6,1,143.623,true
-DFS,Very Large (2000x2000),Stream 100%,28495.4,1,140.374,true
-DSU 1-pass,Very Large (2000x2000),Stream 100%,27252.6,1,146.775,true
+2-Pass DSU,Small (200x200),Full Image,1895.8,5245,21.0993,false
+BFS,Small (200x200),Full Image,657.2,5245,60.8643,false
+DFS,Small (200x200),Full Image,611,5245,65.4664,false
+DSU 1-pass,Small (200x200),Full Image,630.8,5245,63.4115,false
+2-Pass DSU,Small (200x200),Stream 10%,695,3172,5.7554,true
+BFS,Small (200x200),Stream 10%,249.6,3172,16.0256,true
+DFS,Small (200x200),Stream 10%,244.6,3172,16.3532,true
+DSU 1-pass,Small (200x200),Stream 10%,254.2,3172,15.7356,true
+2-Pass DSU,Small (200x200),Stream 50%,1872.8,2753,10.6792,true
+BFS,Small (200x200),Stream 50%,657,2753,30.4414,true
+DFS,Small (200x200),Stream 50%,604,2753,33.1126,true
+DSU 1-pass,Small (200x200),Stream 50%,584.4,2753,34.2231,true
+2-Pass DSU,Small (200x200),Stream 100%,2146.2,1,18.6376,true
+BFS,Small (200x200),Stream 100%,275.8,1,145.033,true
+DFS,Small (200x200),Stream 100%,273.2,1,146.413,true
+DSU 1-pass,Small (200x200),Stream 100%,264.4,1,151.286,true
+2-Pass DSU,Medium (500x500),Full Image,8040.6,32363,31.0922,false
+BFS,Medium (500x500),Full Image,2994.4,32363,83.4892,false
+DFS,Medium (500x500),Full Image,3029,32363,82.5355,false
+DSU 1-pass,Medium (500x500),Full Image,3382.8,32363,73.9033,false
+2-Pass DSU,Medium (500x500),Stream 10%,3485.2,19958,7.17319,true
+BFS,Medium (500x500),Stream 10%,1339.2,19958,18.6679,true
+DFS,Medium (500x500),Stream 10%,1325.4,19958,18.8622,true
+DSU 1-pass,Medium (500x500),Stream 10%,1505.2,19958,16.6091,true
+2-Pass DSU,Medium (500x500),Stream 50%,10970,16714,11.3947,true
+BFS,Medium (500x500),Stream 50%,3973,16714,31.4624,true
+DFS,Medium (500x500),Stream 50%,3704.8,16714,33.74,true
+DSU 1-pass,Medium (500x500),Stream 50%,3880.8,16714,32.2099,true
+2-Pass DSU,Medium (500x500),Stream 100%,13446.2,1,18.5926,true
+BFS,Medium (500x500),Stream 100%,1701,1,146.972,true
+DFS,Medium (500x500),Stream 100%,1890.8,1,132.219,true
+DSU 1-pass,Medium (500x500),Stream 100%,1647.8,1,151.717,true
+2-Pass DSU,Large (1000x1000),Full Image,32372.2,128377,30.8907,false
+BFS,Large (1000x1000),Full Image,12055.2,128377,82.9518,false
+DFS,Large (1000x1000),Full Image,12030.2,128377,83.1241,false
+DSU 1-pass,Large (1000x1000),Full Image,13646.2,128377,73.2805,false
+2-Pass DSU,Large (1000x1000),Stream 10%,14093.4,80158,7.09552,true
+BFS,Large (1000x1000),Stream 10%,5332.2,80158,18.754,true
+DFS,Large (1000x1000),Stream 10%,5304.6,80158,18.8516,true
+DSU 1-pass,Large (1000x1000),Stream 10%,6222.8,80158,16.0699,true
+2-Pass DSU,Large (1000x1000),Stream 50%,43819.8,65718,11.4104,true
+BFS,Large (1000x1000),Stream 50%,15743.4,65718,31.7593,true
+DFS,Large (1000x1000),Stream 50%,14779,65718,33.8318,true
+DSU 1-pass,Large (1000x1000),Stream 50%,15619.8,65718,32.0107,true
+2-Pass DSU,Large (1000x1000),Stream 100%,53734.4,1,18.6101,true
+BFS,Large (1000x1000),Stream 100%,6974,1,143.39,true
+DFS,Large (1000x1000),Stream 100%,6868.6,1,145.59,true
+DSU 1-pass,Large (1000x1000),Stream 100%,6583,1,151.906,true
+2-Pass DSU,Very Large (2000x2000),Full Image,133329,513068,30.0011,false
+BFS,Very Large (2000x2000),Full Image,48838.6,513068,81.9024,false
+DFS,Very Large (2000x2000),Full Image,48709.8,513068,82.119,false
+DSU 1-pass,Very Large (2000x2000),Full Image,65457.2,513068,61.1086,false
+2-Pass DSU,Very Large (2000x2000),Stream 10%,57768.6,319993,6.92418,true
+BFS,Very Large (2000x2000),Stream 10%,21744,319993,18.3959,true
+DFS,Very Large (2000x2000),Stream 10%,21536.6,319993,18.573,true
+DSU 1-pass,Very Large (2000x2000),Stream 10%,27030.8,319993,14.7979,true
+2-Pass DSU,Very Large (2000x2000),Stream 50%,178931,263263,11.1775,true
+BFS,Very Large (2000x2000),Stream 50%,63359.8,263263,31.5658,true
+DFS,Very Large (2000x2000),Stream 50%,59648.6,263263,33.5297,true
+DSU 1-pass,Very Large (2000x2000),Stream 50%,66176.4,263263,30.2223,true
+2-Pass DSU,Very Large (2000x2000),Stream 100%,384471,1,10.4039,true
+BFS,Very Large (2000x2000),Stream 100%,30484.8,1,131.213,true
+DFS,Very Large (2000x2000),Stream 100%,32755.2,1,122.118,true
+DSU 1-pass,Very Large (2000x2000),Stream 100%,30684.4,1,130.359,true
