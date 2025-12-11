@@ -82,7 +82,7 @@ def label_cc_2pass(img: np.ndarray, eight_connectivity=False) -> np.ndarray:
     if used.size == 0:
         return labels  # all background
 
-    # 代表元映射
+    # Representative mapping
     rep = {}
     for lab in used:
         rep_lab = dsu.find(lab)
