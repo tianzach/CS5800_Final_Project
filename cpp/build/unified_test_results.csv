@@ -1,0 +1,65 @@
+Strategy,ImageSize,InputType,Time_us,Components,Throughput_MPs,IsStream
+2-Pass DSU,Small (200x200),Full Image,1479.2,5245,27.0416,false
+BFS,Small (200x200),Full Image,1192,5245,33.557,false
+DFS,Small (200x200),Full Image,762.8,5245,52.4384,false
+DSU 1-pass,Small (200x200),Full Image,530.6,5245,75.3864,false
+2-Pass DSU,Small (200x200),Stream 10%,821,3172,4.87211,true
+BFS,Small (200x200),Stream 10%,261.2,3172,15.3139,true
+DFS,Small (200x200),Stream 10%,244.8,3172,16.3399,true
+DSU 1-pass,Small (200x200),Stream 10%,266,3172,15.0376,true
+2-Pass DSU,Small (200x200),Stream 50%,1780,2753,11.236,true
+BFS,Small (200x200),Stream 50%,628.6,2753,31.8167,true
+DFS,Small (200x200),Stream 50%,647.6,2753,30.8833,true
+DSU 1-pass,Small (200x200),Stream 50%,586,2753,34.1297,true
+2-Pass DSU,Small (200x200),Stream 100%,2136,1,18.7266,true
+BFS,Small (200x200),Stream 100%,275.2,1,145.349,true
+DFS,Small (200x200),Stream 100%,278.8,1,143.472,true
+DSU 1-pass,Small (200x200),Stream 100%,267.2,1,149.701,true
+2-Pass DSU,Medium (500x500),Full Image,8153.4,32363,30.6621,false
+BFS,Medium (500x500),Full Image,3045.6,32363,82.0856,false
+DFS,Medium (500x500),Full Image,3014.2,32363,82.9407,false
+DSU 1-pass,Medium (500x500),Full Image,3413,32363,73.2493,false
+2-Pass DSU,Medium (500x500),Stream 10%,3557.4,19958,7.0276,true
+BFS,Medium (500x500),Stream 10%,1364.8,19958,18.3177,true
+DFS,Medium (500x500),Stream 10%,1339.6,19958,18.6623,true
+DSU 1-pass,Medium (500x500),Stream 10%,1575.2,19958,15.871,true
+2-Pass DSU,Medium (500x500),Stream 50%,11700.4,16714,10.6834,true
+BFS,Medium (500x500),Stream 50%,4124.4,16714,30.3074,true
+DFS,Medium (500x500),Stream 50%,3784.6,16714,33.0286,true
+DSU 1-pass,Medium (500x500),Stream 50%,3966.4,16714,31.5147,true
+2-Pass DSU,Medium (500x500),Stream 100%,13531.4,1,18.4755,true
+BFS,Medium (500x500),Stream 100%,1700.6,1,147.007,true
+DFS,Medium (500x500),Stream 100%,1854.6,1,134.8,true
+DSU 1-pass,Medium (500x500),Stream 100%,1678.8,1,148.916,true
+2-Pass DSU,Large (1000x1000),Full Image,32836.4,128377,30.454,false
+BFS,Large (1000x1000),Full Image,12185,128377,82.0681,false
+DFS,Large (1000x1000),Full Image,12139.2,128377,82.3778,false
+DSU 1-pass,Large (1000x1000),Full Image,13945.6,128377,71.7072,false
+2-Pass DSU,Large (1000x1000),Stream 10%,14194.6,80158,7.04493,true
+BFS,Large (1000x1000),Stream 10%,5346.6,80158,18.7035,true
+DFS,Large (1000x1000),Stream 10%,5353,80158,18.6811,true
+DSU 1-pass,Large (1000x1000),Stream 10%,6283.6,80158,15.9144,true
+2-Pass DSU,Large (1000x1000),Stream 50%,44080.2,65718,11.343,true
+BFS,Large (1000x1000),Stream 50%,16136.6,65718,30.9855,true
+DFS,Large (1000x1000),Stream 50%,14815.8,65718,33.7478,true
+DSU 1-pass,Large (1000x1000),Stream 50%,15742.6,65718,31.761,true
+2-Pass DSU,Large (1000x1000),Stream 100%,53657,1,18.6369,true
+BFS,Large (1000x1000),Stream 100%,6914.4,1,144.626,true
+DFS,Large (1000x1000),Stream 100%,7037,1,142.106,true
+DSU 1-pass,Large (1000x1000),Stream 100%,6700.4,1,149.245,true
+2-Pass DSU,Very Large (2000x2000),Full Image,135119,513068,29.6036,false
+BFS,Very Large (2000x2000),Full Image,48914.6,513068,81.7752,false
+DFS,Very Large (2000x2000),Full Image,52478.6,513068,76.2215,false
+DSU 1-pass,Very Large (2000x2000),Full Image,68124.8,513068,58.7158,false
+2-Pass DSU,Very Large (2000x2000),Stream 10%,58229.2,319993,6.86941,true
+BFS,Very Large (2000x2000),Stream 10%,21373.6,319993,18.7147,true
+DFS,Very Large (2000x2000),Stream 10%,22007.8,319993,18.1754,true
+DSU 1-pass,Very Large (2000x2000),Stream 10%,27912.2,319993,14.3307,true
+2-Pass DSU,Very Large (2000x2000),Stream 50%,180674,263263,11.0697,true
+BFS,Very Large (2000x2000),Stream 50%,63624.2,263263,31.4346,true
+DFS,Very Large (2000x2000),Stream 50%,59637.4,263263,33.536,true
+DSU 1-pass,Very Large (2000x2000),Stream 50%,67430.6,263263,29.6601,true
+2-Pass DSU,Very Large (2000x2000),Stream 100%,216735,1,18.4557,true
+BFS,Very Large (2000x2000),Stream 100%,27850.6,1,143.623,true
+DFS,Very Large (2000x2000),Stream 100%,28495.4,1,140.374,true
+DSU 1-pass,Very Large (2000x2000),Stream 100%,27252.6,1,146.775,true
